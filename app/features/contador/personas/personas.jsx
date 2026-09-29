@@ -1,13 +1,13 @@
-import useContador from '../hooks/useContador';
+import useContador from "../hooks/useContador";
 import {PERSONAS_FORM_TEXT} from "../constants/personas.contants.js";
 
 export function Personas({setCount}) {
-    const {handleIncrement} = useContador(setCount)
+    const {handleIncrement} = useContador(setCount);
 
     const handleSubmit = (e) => {
-        e.preventDefault()
-        handleIncrement()
-    }
+        e.preventDefault();
+        handleIncrement();
+    };
 
     return (
         <>
@@ -18,5 +18,5 @@ export function Personas({setCount}) {
                 <input type={"submit"} value={PERSONAS_FORM_TEXT.SAVE_PLACEHOLDER}/>
             </form>
         </>
-    )
+    );
 }
