@@ -1,0 +1,1 @@
+export const CAPACIDAD_MAXIMA = 5;
