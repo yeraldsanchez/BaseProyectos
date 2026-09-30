@@ -1,1 +1,1 @@
-export const CAPACIDAD_MAXIMA = 10;
+export const CAPACIDAD_MAXIMA = 5;

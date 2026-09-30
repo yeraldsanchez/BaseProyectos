@@ -1,3 +1,3 @@
 export const LISTA_TEXT  = {
-    TITULO : "Lista de participantes"
+    TITULO : "Lista de participantes",
 }

@@ -8,9 +8,17 @@ export default function FormularioParticipantes({count, setCount, personas, setP
     const {handleSubmit} = useRegistro(setCount, personas, setPersonas);
 
     const [nombre, setNombre] = useState("");
+    const [error, setError] = useState("");
 
     const handleSend = (e) => {
         e.preventDefault();
+
+        if (!nombre.trim()) {
+            setError(FORMULARIO_TEXT.ERROR_TEXT);
+            return;
+        }
+
+        setError("");
         e.currentTarget.reset();
         handleSubmit(nombre);
         setNombre("");
@@ -21,6 +29,7 @@ export default function FormularioParticipantes({count, setCount, personas, setP
             <form onSubmit={count < CAPACIDAD_MAXIMA ? handleSend: null}>
                 <input type="text" placeholder={FORMULARIO_TEXT.NAME_PLACEHOLDER} onChange={(e)=>setNombre(e.target.value)}/>
                 <input type="submit" value={FORMULARIO_TEXT.SUBMIT_PLACEHOLDER} disabled={count >= CAPACIDAD_MAXIMA}/>
+                {error && <p style={{color: FORMULARIO_TEXT.ERROR_COLOR}}>{error}</p>}
             </form>
         </>
     )
